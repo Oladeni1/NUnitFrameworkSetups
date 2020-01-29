@@ -1,0 +1,54 @@
+
+1. Install the following packages on the VIsual Studio itself via:
+
+  Tools > Extension and Updates> Search "NUnit" and install on the VSTS
+     (a). Install Nunit VS Template
+     (b). Install NUnit3 Test Adaptor
+
+2. Create your project Via
+
+File > New > Project > Visual C# > Test > Select "NUnit3 Unit Test Project" > Name your project> Click OK.
+
+3. Add References as thus:
+  RightClick References > Manage NuGet Packages
+     (a). Install NUnit
+     (b). Install all the 3 selenium packages
+    
+
+4. Add the following Classes and attributes to the existing class:
+
+   [SetUp]
+public viod LaunchBrowser()
+{
+//Your codes
+}
+   [Test]
+public viod RunTest()
+{
+//your codes
+}
+   [TearDown]
+public viod TesrDown()
+{
+// your codes
+}
+
+5. Build your project/Solution (Always) > Test Runner will appear at LHS
+
+6. If not, Nav to Test > Windows > Test Explorer > Test Runner will appear at LHS
+
+7. Declear IWebDriver globally
+    IWebDriver driver = New ChromeDriver();
+
+8. Write other codes and execute your Test.
+
+9. Troubleshoot: If Test does not run, close Visual studion and go to this location:
+   C:\\ usewr\yourusername\AppData\Local\Temp\ visualStudioTestExplorerExtension
+
+and DELETE any folder(s) with name: NUnit3TestAdaptor you can find
+
+10. Re-open your project and re-run your Test, you will be fine! 
+   
+
+   
+      
